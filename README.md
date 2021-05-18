@@ -14,7 +14,7 @@ Clone the repo and chnage provisionaing profile and app bundle id to build to AR
 ## Click on *Need help?*
 
 1. Click on any part of the screen to start the rectangle detection
-1. When the correct rectangle is detected, touch on the rectangular outline to create the overlay 
+1. When the correct rectangle is detected, touch inside the rectangular outline to create the overlay 
 1. Enjoy the wonders of AR technology
 
 <img src="https://user-images.githubusercontent.com/71535143/118597594-e2915300-b77a-11eb-80eb-3fdbf7a4967c.jpeg" height="450"> <img src="https://user-images.githubusercontent.com/71535143/118597588-e1602600-b77a-11eb-9a90-1c26513360d2.jpeg" height="450"> <img src="https://user-images.githubusercontent.com/71535143/118597592-e1f8bc80-b77a-11eb-81da-070c95ff0caa.jpeg" height="450">
