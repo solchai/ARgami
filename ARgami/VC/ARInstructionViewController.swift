@@ -14,6 +14,7 @@ class ARInstructionViewController: UIViewController, ARSCNViewDelegate, ARSessio
     
     @IBOutlet weak var sceneView: ARSCNView!
     private var selectedRectangleOutlineLayer: CAShapeLayer?
+    private var selectedRectangleOverlay: RectangleNode?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,10 +40,25 @@ class ARInstructionViewController: UIViewController, ARSCNViewDelegate, ARSessio
         sceneView.session.run(configuration)
     }
     
+    @IBAction func eraseScreen(_ sender: UIButton) {
+        if let layer = self.selectedRectangleOutlineLayer {
+            layer.removeFromSuperlayer()
+            self.selectedRectangleOutlineLayer = nil
+        }
+        if let rectangle = selectedRectangleOverlay {
+            rectangle.removeFromParentNode()
+            selectedRectangleOverlay = nil
+        }
+    }
+    
     @IBAction func dismissView(_ sender: UIButton) {
         if let layer = self.selectedRectangleOutlineLayer {
             layer.removeFromSuperlayer()
             self.selectedRectangleOutlineLayer = nil
+        }
+        if let rectangle = selectedRectangleOverlay {
+            rectangle.removeFromParentNode()
+            selectedRectangleOverlay = nil
         }
         self.dismiss(animated: true, completion: nil)
     }
@@ -158,19 +174,25 @@ class ARInstructionViewController: UIViewController, ARSCNViewDelegate, ARSessio
     }
     
     private func addPlaneRect(for observedRect: VNRectangleObservation, transform: CGAffineTransform) {
-    // Remove old outline of selected rectangle
-    if let layer = selectedRectangleOutlineLayer {
-        layer.removeFromSuperlayer()
-        selectedRectangleOutlineLayer = nil
-    }
-    
-    // Convert to 3D coordinates
-    guard let planeRectangle = PlaneRectangle(for: observedRect, in: sceneView, with: transform) else {
+        // Remove old outline of selected rectangle
+        if let layer = selectedRectangleOutlineLayer {
+            layer.removeFromSuperlayer()
+            selectedRectangleOutlineLayer = nil
+        }
+        
+        if let rectangle = selectedRectangleOverlay {
+            rectangle.removeFromParentNode()
+            selectedRectangleOverlay = nil
+        }
+        
+        // Convert to 3D coordinates
+        guard let planeRectangle = PlaneRectangle(for: observedRect, in: sceneView, with: transform) else {
         print("No plane for this rectangle")
         return
     }
     
     let rectangleNode = RectangleNode(planeRectangle)
+    self.selectedRectangleOverlay = rectangleNode
     sceneView.scene.rootNode.addChildNode(rectangleNode)
 }
     /*
