@@ -1,4 +1,4 @@
-# ARgami
+# <img src="https://user-images.githubusercontent.com/71535143/118598560-436d5b00-b77c-11eb-8129-24565382c977.png" height="70"> ARgami
 Providing interactive origami tutorial with AR instructions
 
 Clone the repo and chnage provisionaing profile and app bundle id to build to ARgami on your device!
