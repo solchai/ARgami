@@ -15,7 +15,8 @@ class ARInstructionViewController: UIViewController, ARSCNViewDelegate, ARSessio
     @IBOutlet weak var sceneView: ARSCNView!
     private var selectedRectangleOutlineLayer: CAShapeLayer?
     private var selectedRectangleOverlay: RectangleNode?
-
+    var arOverlayImage: UIImage?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -65,7 +66,7 @@ class ARInstructionViewController: UIViewController, ARSCNViewDelegate, ARSessio
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first,
-            let currentFrame = sceneView.session.currentFrame else {
+              let currentFrame = sceneView.session.currentFrame else {
             return
         }
         
@@ -78,8 +79,8 @@ class ARInstructionViewController: UIViewController, ARSCNViewDelegate, ARSessio
         let sceneSize = sceneView.frame.size
         
         let fromCameraImageToViewTransform = currentFrame.displayTransformCorrected(
-          for: interfaceOrientation,
-          viewportSize: sceneSize
+            for: interfaceOrientation,
+            viewportSize: sceneSize
         )
         
         DispatchQueue.global(qos: .background).async {
@@ -138,12 +139,12 @@ class ARInstructionViewController: UIViewController, ARSCNViewDelegate, ARSessio
             path.addLine(to: point)
         }
         layer.path = path.cgPath
-
+        
         layer.addSublayer(drawPoint(points[0], color: .red))
         layer.addSublayer(drawPoint(points[1], color: .green))
         layer.addSublayer(drawPoint(points[2], color: .blue))
         layer.addSublayer(drawPoint(points[3], color: .yellow))
-
+        
         return layer
     }
     
@@ -187,22 +188,12 @@ class ARInstructionViewController: UIViewController, ARSCNViewDelegate, ARSessio
         
         // Convert to 3D coordinates
         guard let planeRectangle = PlaneRectangle(for: observedRect, in: sceneView, with: transform) else {
-        print("No plane for this rectangle")
-        return
+            print("No plane for this rectangle")
+            return
+        }
+        
+        let rectangleNode = RectangleNode(planeRectangle, arOverlayImage)
+        self.selectedRectangleOverlay = rectangleNode
+        sceneView.scene.rootNode.addChildNode(rectangleNode)
     }
-    
-    let rectangleNode = RectangleNode(planeRectangle)
-    self.selectedRectangleOverlay = rectangleNode
-    sceneView.scene.rootNode.addChildNode(rectangleNode)
-}
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

@@ -15,7 +15,7 @@ class WelcomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Welcome!"
-
+        
         tutorialButton.backgroundColor = UIColor(named: "TutorialColour")
         tutorialButton.layer.masksToBounds = true
         tutorialButton.layer.cornerRadius = 10

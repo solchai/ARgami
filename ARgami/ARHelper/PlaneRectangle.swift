@@ -68,6 +68,9 @@ fileprivate func getCorners(for rectangle: VNRectangleObservation,
                             with transform: CGAffineTransform) -> (corners: RectangleCorners, anchor: ARPlaneAnchor)? {
 
     // Perform a hittest on each corner to find intersecting surfaces
+    
+    // TODO: 'hitTest(_:types:)' was deprecated in iOS 14.0: Use [ARSCNView raycastQueryFromPoint:allowingTarget:alignment]
+    
     let tl = sceneView.hitTest(rectangle.topLeft.applying(transform), types: .existingPlaneUsingExtent)
     let tr = sceneView.hitTest(rectangle.topRight.applying(transform), types: .existingPlaneUsingExtent)
     let bl = sceneView.hitTest(rectangle.bottomLeft.applying(transform), types: .existingPlaneUsingExtent)

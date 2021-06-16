@@ -14,14 +14,14 @@ private let meters2inches = CGFloat(39.3701)
 
 class RectangleNode: SCNNode {
     
-    convenience init(_ planeRectangle: PlaneRectangle) {
+    convenience init(_ planeRectangle: PlaneRectangle, _ image: UIImage? = nil) {
         self.init(center: planeRectangle.position,
         width: planeRectangle.size.width,
         height: planeRectangle.size.height,
         orientation: planeRectangle.orientation)
     }
     
-    init(center position: SCNVector3, width: CGFloat, height: CGFloat, orientation: Float) {
+    init(center position: SCNVector3, width: CGFloat, height: CGFloat, orientation: Float, _ image: UIImage? = nil) {
         super.init()
         
         // Debug
@@ -30,7 +30,7 @@ class RectangleNode: SCNNode {
         // Create the 3D plane geometry with the dimensions calculated from corners
         let planeGeometry = SCNPlane(width: width, height: height)
         
-        if let image = UIImage(named: "fox-intruct1ARImage") {
+        if let image = image {
             planeGeometry.firstMaterial?.diffuse.contents = image
             planeGeometry.firstMaterial?.isDoubleSided = true
         } else {

@@ -9,20 +9,21 @@ import UIKit
 
 class StepImageViewController: UIViewController {
     @IBOutlet weak var stepImage: UIImageView!
-    var image: UIImage?
+    var image: (UIImage, UIImage)?
     var index: Int?
     
     var cameraView: ARInstructionViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.stepImage.image = image
+        self.stepImage.image = image?.0
         // Do any additional setup after loading the view.
         guard let arViewController = storyboard?.instantiateViewController(identifier: String(describing: ARInstructionViewController.self)) as? ARInstructionViewController else {
             return
         }
         
         arViewController.modalPresentationStyle = .fullScreen
+        arViewController.arOverlayImage = image?.1
         
         cameraView = arViewController
     }
@@ -31,17 +32,5 @@ class StepImageViewController: UIViewController {
         if let arView = cameraView {
             present(arView, animated: true, completion: nil)
         }
-//        show(cameraView, sender: self)
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

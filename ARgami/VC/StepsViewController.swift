@@ -11,12 +11,12 @@ class StepsViewController: UIViewController {
     
     @IBOutlet weak var contentView: UIView!
     
-    let steps: [UIImage]
+    let steps: [(UIImage,UIImage)]
     let name: String
     
     var currentViewControllerIndex: Int = 0
     
-    init?(coder: NSCoder, steps: [UIImage], name: String) {
+    init?(coder: NSCoder, steps: [(UIImage,UIImage)], name: String) {
         self.steps = steps
         self.name = name
         super.init(coder: coder)
@@ -75,16 +75,6 @@ class StepsViewController: UIViewController {
         
         return stepImageViewController
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension StepsViewController: UIPageViewControllerDelegate, UIPageViewControllerDataSource {
