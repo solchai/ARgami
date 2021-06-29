@@ -18,10 +18,11 @@ class RectangleNode: SCNNode {
         self.init(center: planeRectangle.position,
         width: planeRectangle.size.width,
         height: planeRectangle.size.height,
-        orientation: planeRectangle.orientation)
+        orientation: planeRectangle.orientation,
+        image: image)
     }
     
-    init(center position: SCNVector3, width: CGFloat, height: CGFloat, orientation: Float, _ image: UIImage? = nil) {
+    init(center position: SCNVector3, width: CGFloat, height: CGFloat, orientation: Float, image: UIImage? = nil) {
         super.init()
         
         // Debug
