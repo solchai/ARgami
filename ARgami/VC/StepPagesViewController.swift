@@ -4,6 +4,7 @@
 //
 //  Created by Solomon Chai on 2021-05-08.
 //
+//  Container for the StepsView
 
 import UIKit
 

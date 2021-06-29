@@ -4,6 +4,7 @@
 //
 //  Created by Solomon Chai on 2021-05-07.
 //
+//  Displays the avilable origami tutorials
 
 import UIKit
 
@@ -26,6 +27,7 @@ class TutorialViewController: UIViewController {
     
     @IBSegueAction func showSteps(_ coder: NSCoder) -> StepsViewController? {
         defer {
+            // deselect row after showSteps is executed
             tableView.deselectRow(at: tableView.indexPathForSelectedRow!, animated: true)
         }
         
@@ -46,22 +48,4 @@ extension TutorialViewController: UITableViewDelegate, UITableViewDataSource {
         
         return cell
     }
-    
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        performSegue(withIdentifier: "showSteps", sender: self)
-//    }
-//
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        guard let indexPath = tableView.indexPathForSelectedRow else {
-//            return
-//        }
-//
-//        if let destination = segue.destination as? StepsViewController {
-//            destination.steps = tutorials[indexPath.row].steps
-//        }
-//
-//        tableView.deselectRow(at: indexPath, animated: true)
-//    }
-    
-    
 }

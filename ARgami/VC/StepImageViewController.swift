@@ -17,7 +17,7 @@ class StepImageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.stepImage.image = image?.0
-        // Do any additional setup after loading the view.
+        
         guard let arViewController = storyboard?.instantiateViewController(identifier: String(describing: ARInstructionViewController.self)) as? ARInstructionViewController else {
             return
         }

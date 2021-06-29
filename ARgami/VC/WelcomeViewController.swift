@@ -4,6 +4,7 @@
 //
 //  Created by Solomon Chai on 2021-05-07.
 //
+//  Welcome screen first screen that the user sees
 
 import UIKit
 

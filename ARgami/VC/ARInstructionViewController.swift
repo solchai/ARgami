@@ -62,6 +62,7 @@ class ARInstructionViewController: UIViewController, ARSCNViewDelegate, ARSessio
             selectedRectangleOverlay = nil
         }
         self.dismiss(animated: true, completion: nil)
+        // deinit the ARSCNView
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -96,8 +97,6 @@ class ARInstructionViewController: UIViewController, ARSCNViewDelegate, ARSessio
                         layer.removeFromSuperlayer()
                         self.selectedRectangleOutlineLayer = nil
                     }
-                    
-                    print("\(observations.first) rectangles found")
                     
                     if let observation = observations.first {
                         let normalizedPoints = [observation.topLeft, observation.topRight, observation.bottomRight, observation.bottomLeft]
