@@ -15,7 +15,7 @@ class ARInstructionViewController: UIViewController, ARSCNViewDelegate, ARSessio
     @IBOutlet weak var sceneView: ARSCNView!
     private var selectedRectangleOutlineLayer: CAShapeLayer?
     private var selectedRectangleOverlay: RectangleNode?
-    var arOverlayImage: UIImage?
+    weak var arOverlayImage: UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +27,6 @@ class ARInstructionViewController: UIViewController, ARSCNViewDelegate, ARSessio
         
         let scene = SCNScene()
         sceneView.scene = scene
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -37,7 +36,6 @@ class ARInstructionViewController: UIViewController, ARSCNViewDelegate, ARSessio
         let configuration = ARWorldTrackingConfiguration()
         configuration.planeDetection = .horizontal
         
-        // Run the view's session
         sceneView.session.run(configuration)
     }
     
@@ -62,7 +60,7 @@ class ARInstructionViewController: UIViewController, ARSCNViewDelegate, ARSessio
             selectedRectangleOverlay = nil
         }
         self.dismiss(animated: true, completion: nil)
-        // deinit the ARSCNView
+        // TODO: deinit the ARSCNView
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
