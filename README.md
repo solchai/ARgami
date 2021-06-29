@@ -20,3 +20,7 @@ Clone the repo and change the provisioning profile and app bundle id to build AR
 <img src="https://user-images.githubusercontent.com/71535143/118597594-e2915300-b77a-11eb-80eb-3fdbf7a4967c.jpeg" height="450"> <img src="https://user-images.githubusercontent.com/71535143/118597588-e1602600-b77a-11eb-9a90-1c26513360d2.jpeg" height="450"> <img src="https://user-images.githubusercontent.com/71535143/118597592-e1f8bc80-b77a-11eb-81da-070c95ff0caa.jpeg" height="450">
 ### Video demo
 https://user-images.githubusercontent.com/71535143/118597596-e2915300-b77a-11eb-8190-8f46f226ab3d.mp4
+
+## Special Thanks
+To Mel Ludowise for a huge help in creating the AR scene nodes.
+Please refer to https://github.com/mludowise/ARKitRectangleDetection for original code for rectangle detection in ARSCNView
