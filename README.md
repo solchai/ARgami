@@ -23,9 +23,10 @@ https://user-images.githubusercontent.com/71535143/118597596-e2915300-b77a-11eb-
 
 ### TODO
 1. Migrate to openCV for a more felexible camera vision technology
-2. Have origami turtorial data stored on cloud (S3 bucket)
+2. Support detection of any polygons (given number of sides and the ratio of the sizes)
+3. Have origami turtorial data stored on cloud (S3 bucket) and fetched in the app
 
 ### Special Thanks
-To Mel Ludowise for a huge help in creating the AR scene nodes.
+To Mel Ludowise for a huge help in creating AR scene nodes with rectangle detection.
 Please refer to https://github.com/mludowise/ARKitRectangleDetection for original code for rectangle detection in ARSCNView
 
