@@ -84,6 +84,7 @@ class ARInstructionViewController: UIViewController, ARSCNViewDelegate, ARSessio
             viewportSize: sceneSize
         )
         
+        // send to background Queue to free up main thread
         DispatchQueue.global(qos: .background).async {
             let request = VNDetectRectanglesRequest(completionHandler: { (request, error) in
                 
