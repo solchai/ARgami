@@ -21,6 +21,11 @@ Clone the repo and change the provisioning profile and app bundle id to build AR
 ### Video demo
 https://user-images.githubusercontent.com/71535143/118597596-e2915300-b77a-11eb-8190-8f46f226ab3d.mp4
 
-## Special Thanks
+### TODO
+1. Migrate to openCV for a more felexible camera vision technology
+2. Have origami turtorial data stored on cloud (S3 bucket)
+
+### Special Thanks
 To Mel Ludowise for a huge help in creating the AR scene nodes.
 Please refer to https://github.com/mludowise/ARKitRectangleDetection for original code for rectangle detection in ARSCNView
+
