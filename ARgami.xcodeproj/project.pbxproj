@@ -20,7 +20,6 @@
 		50693A4B2647803000ACAA3B /* StepsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50693A4A2647803000ACAA3B /* StepsViewController.swift */; };
 		50693A4F2647816200ACAA3B /* StepPagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50693A4E2647816200ACAA3B /* StepPagesViewController.swift */; };
 		50693A522647847500ACAA3B /* StepImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50693A512647847500ACAA3B /* StepImageViewController.swift */; };
-		50B1A5AF2648BDC200CDB24E /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B1A5AE2648BDC200CDB24E /* CameraViewController.swift */; };
 		50B1A5BB2650DD6E00CDB24E /* ARInstructionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B1A5BA2650DD6E00CDB24E /* ARInstructionViewController.swift */; };
 		50B1A5C12650EF1500CDB24E /* ARFrame+Transform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B1A5C02650EF1500CDB24E /* ARFrame+Transform.swift */; };
 		50B1A5C52650EFDF00CDB24E /* DeviceOrientation+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B1A5C42650EFDF00CDB24E /* DeviceOrientation+Extention.swift */; };
@@ -47,7 +46,6 @@
 		50693A4A2647803000ACAA3B /* StepsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsViewController.swift; sourceTree = "<group>"; };
 		50693A4E2647816200ACAA3B /* StepPagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepPagesViewController.swift; sourceTree = "<group>"; };
 		50693A512647847500ACAA3B /* StepImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepImageViewController.swift; sourceTree = "<group>"; };
-		50B1A5AE2648BDC200CDB24E /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		50B1A5BA2650DD6E00CDB24E /* ARInstructionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARInstructionViewController.swift; sourceTree = "<group>"; };
 		50B1A5C02650EF1500CDB24E /* ARFrame+Transform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARFrame+Transform.swift"; sourceTree = "<group>"; };
 		50B1A5C42650EFDF00CDB24E /* DeviceOrientation+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeviceOrientation+Extention.swift"; sourceTree = "<group>"; };
@@ -94,7 +92,6 @@
 				50693A3C26462D9800ACAA3B /* TutorialCell.swift */,
 				50B1A5BF2650EEEF00CDB24E /* Extensions */,
 				50B1A5C72651B24300CDB24E /* ARHelper */,
-				50902D59268B778F00430F83 /* Scrap Keep for Now */,
 				50B1A5B82650DC3200CDB24E /* VC */,
 				50902D5A268B781600430F83 /* Model */,
 				50693A222644F34200ACAA3B /* Main.storyboard */,
@@ -103,14 +100,6 @@
 				50693A2A2644F34500ACAA3B /* Info.plist */,
 			);
 			path = ARgami;
-			sourceTree = "<group>";
-		};
-		50902D59268B778F00430F83 /* Scrap Keep for Now */ = {
-			isa = PBXGroup;
-			children = (
-				50B1A5AE2648BDC200CDB24E /* CameraViewController.swift */,
-			);
-			path = "Scrap Keep for Now";
 			sourceTree = "<group>";
 		};
 		50902D5A268B781600430F83 /* Model */ = {
@@ -225,7 +214,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50B1A5AF2648BDC200CDB24E /* CameraViewController.swift in Sources */,
 				50693A212644F34200ACAA3B /* ViewController.swift in Sources */,
 				50693A332644FC4700ACAA3B /* WelcomeViewController.swift in Sources */,
 				50B1A5D72651B43800CDB24E /* SCNVector3+Extension.swift in Sources */,
