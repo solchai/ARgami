@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class Tutorial {
+struct Tutorial {
     var image: UIImage
     var title: String
     var steps: [(UIImage, UIImage)]  // 0: Step Image, 1: AR overlay image

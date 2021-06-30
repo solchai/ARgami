@@ -8,6 +8,8 @@
 
 import UIKit
 
+private let tutorialCellKey = "TutorialCell"
+
 class TutorialViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
@@ -43,7 +45,7 @@ extension TutorialViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let tutorial = tutorials[indexPath.row]
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TutorialCell") as! TutorialCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: tutorialCellKey) as! TutorialCell
         cell.setCell(tutorial: tutorial)
         
         return cell
